@@ -2,4 +2,4 @@
 for x in reversed(range(97, 123)):
     if x % 2 != 0:
         x = x - 32
-    print(chr(x), end='')
+    print("{}".format(chr(x)), end='')
