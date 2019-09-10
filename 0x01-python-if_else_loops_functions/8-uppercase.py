@@ -8,5 +8,5 @@ def uppercase(str):
         else:
             y = ord(str[x])
 
-        print(chr(y), end='')
+        print("{}".format(chr(y)), end='')
     print()
