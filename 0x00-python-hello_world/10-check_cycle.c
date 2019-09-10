@@ -12,7 +12,7 @@ int check_cycle(listint_t *list)
 	listint_t *ojo = list;
 	listint_t *ojo2 = list->next->next;
 
-	if (!ojo || ojo->next == NULL || ojo->next->next == NULL)
+	if (!list || list->next == NULL || list->next->next == NULL)
 		return (0);
 
 	while (ojo2->next->next)
