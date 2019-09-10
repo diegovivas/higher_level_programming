@@ -9,7 +9,6 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *ojo = list;
 	listint_t *ojo2 = list->next->next;
 
 	if (!list || list->next == NULL || list->next->next == NULL)
@@ -17,10 +16,10 @@ int check_cycle(listint_t *list)
 
 	while (ojo2->next->next)
 	{
-		if (ojo2 == ojo)
+		if (ojo2 == list)
 			return (1);
 
-		ojo = ojo->next;
+		list = list->next;
 		ojo2 = ojo2->next->next;
 	}
 
