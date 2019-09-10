@@ -11,11 +11,7 @@ int check_cycle(listint_t *list)
 {
 	listint_t *ojo;
 
-	if (!list)
-		return (0);
-	if (list->next == NULL)
-		return (0);
-	if (list->next->next == NULL)
+	if (!list && list->next == NULL && list->next->next == NULL)
 		return (0);
 
 
