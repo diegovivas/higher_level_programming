@@ -35,8 +35,10 @@ listint_t *insert_node(listint_t **head, int number)
 			break;
 	}
 	if (ojo->next == NULL)
-		return (NULL);
-
+	{
+		ojo->next = nodo;
+		return (nodo);
+	}
 	nodo->next = ojo->next;
 	ojo->next = nodo;
 	return (nodo);
