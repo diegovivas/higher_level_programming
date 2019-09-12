@@ -5,10 +5,10 @@ if __name__ == "__main__":
         print('1 argument:')
     elif len(sys.argv) > 2:
         print('{} arguments:'.format(len(sys.argv)-1))
-    for x  in range(len(sys.argv)):
+    for x in range(len(sys.argv)):
         if len(sys.argv) == 1:
             print('0 arguments.')
         else:
             if x > 0:
-                print ('{}: '.format(x), str(sys.argv[x]))
+                print('{}: '.format(x), str(sys.argv[x]))
                 x = x + 1
