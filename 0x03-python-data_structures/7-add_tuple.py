@@ -9,6 +9,8 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(lista) <= 3:
         lista.append(0)
         lista.append(0)
+        lista.append(0)
+        lista.append(0)
     lista[0] = lista[0] + lista[2]
     lista[1] = lista[1] + lista[3]
     new_tuple = (lista[0], lista[1])
