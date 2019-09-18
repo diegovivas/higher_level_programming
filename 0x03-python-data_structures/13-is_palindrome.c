@@ -13,6 +13,7 @@ int is_palindrome(listint_t **head)
 	int ciclador = 0;
 	int iterador = 0;
 	int otra = 0;
+	int cont = 0;
 
 	if (!*head)
 		return (1);
@@ -34,7 +35,8 @@ int is_palindrome(listint_t **head)
 		{
 			if (ojo->n == ojo2->n)
 			{
-				iterador = 0;
+				cont++;
+				iterador = cont - 1;
 				tama--;
 				ojo2 = ojo;
 				ojo = ojo->next;
