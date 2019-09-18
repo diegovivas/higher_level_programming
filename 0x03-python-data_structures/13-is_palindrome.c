@@ -28,7 +28,7 @@ int is_palindrome(listint_t **head)
 	if (tama % 2 == 0)
 		otra = (tama / 2) - 1;
 	else
-		otra = tama - 2;
+		otra = tama / 2;
 	while (iterador < ciclador && tama != otra)
 	{
 		ojo2 = ojo2->next;
