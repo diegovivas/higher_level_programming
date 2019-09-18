@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 	int otra = 0;
 
 	if (!*head)
-		return (0);
+		return (1);
 	ojo = *head;
 	ojo2 = *head;
 	while (ojo->next)
