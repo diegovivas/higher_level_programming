@@ -36,7 +36,7 @@ int is_palindrome(listint_t **head)
 			{
 				iterador = 0;
 				tama--;
-				ojo2 = *head;
+				ojo2 = ojo;
 				ojo = ojo->next;
 			}
 			else
