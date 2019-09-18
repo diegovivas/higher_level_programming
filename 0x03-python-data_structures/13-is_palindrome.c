@@ -26,22 +26,24 @@ int is_palindrome(listint_t **head)
 	}
 	ojo = *head;
 	ciclador = tama + 1;
-	otra = (tama / 2) - 1;
-	while (iterador < ciclador && tama != otra)
-	{
-		ojo2 = ojo2->next;
+	if (tama % 2 == 0)
+		otra = tama / 2;
+	else
+		otra = (tama / 2) - 1;
+	while (iterador < ciclador)
+	{		ojo2 = ojo2->next;
 		iterador++;
 		if (iterador == tama)
 		{
 			if (ojo->n == ojo2->n)
-			{
-				cont++;
+			{				cont++;
 				iterador = cont - 1;
 				tama--;
+				if (tama == otra)
+					break;
 				ojo2 = ojo;
 				ojo = ojo->next;
-			}
-			else
+			}			else
 				return (0);
 		}
 	}
