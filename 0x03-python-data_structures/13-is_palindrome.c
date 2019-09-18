@@ -12,6 +12,7 @@ int is_palindrome(listint_t **head)
 	int tama = 0;
 	int ciclador = 0;
 	int iterador = 0;
+	int otra = 0;
 
 	if (!*head)
 		return (1);
@@ -24,7 +25,8 @@ int is_palindrome(listint_t **head)
 	}
 	ojo = *head;
 	ciclador = tama + 1;
-	while (iterador < ciclador)
+	otra = (tama / 2) - 1;
+	while (iterador < ciclador && tama != otra)
 	{
 		ojo2 = ojo2->next;
 		iterador++;
