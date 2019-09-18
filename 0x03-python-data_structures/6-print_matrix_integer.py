@@ -4,7 +4,7 @@ def print_matrix_integer(matrix=[[]]):
             if not eachlist:
                     print()
             for idx, elem in enumerate(eachlist):
-                print("{}".format(elem), end='')
+                print("{:d}".format(elem), end='')
                 if idx != (len(eachlist) - 1):
                     print(" ", end='')
                 else:
