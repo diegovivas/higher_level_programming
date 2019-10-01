@@ -3,8 +3,8 @@ class Square:
     _size = 0
 
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -45,9 +45,9 @@ class Square:
         hola3 = "\n"
         if (self.size == 0):
             print()
-        if (self.__position[1] > 0):
+        else:
             print(hola3 * self.__position[1], end="")
-        while (i < self.size):
-            print(hola2 * self.__position[0], end="")
-            print(hola * self.size)
-            i += 1
+            while (i < self.size):
+                print(hola2 * self.__position[0], end="")
+                print(hola * self.size)
+                i += 1
