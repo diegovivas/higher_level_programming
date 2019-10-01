@@ -25,7 +25,7 @@ class Square:
         hola = "#"
         if (self.__size == 0):
             print()
+
         while (i < self.__size):
             print(hola * self.__size)
             i += 1
-            
