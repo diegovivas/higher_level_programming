@@ -36,7 +36,7 @@ class Square:
         elif (len(value) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__position = position
+            self.__position = value
 
     def my_print(self):
         i = 0
