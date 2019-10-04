@@ -1,0 +1,15 @@
+test for add_integer function
+
+>>> ojo = __import__('3-say_my_name').say_my_name
+
+
+>>> ojo("Diego","Vivas")
+My name is Diego Vivas
+>>> ojo(11, "Vivas")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+>>> ojo("Diego", 11)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+>>> ojo("Diego")
+My name is Diego 

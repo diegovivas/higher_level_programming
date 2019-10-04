@@ -1,0 +1,12 @@
+
+>>> ojo = __import__("5-text_indentation").text_indentation
+
+>>> ojo("ho. la: mun? do.")
+ho.
+la:
+mun?
+do.
+
+>>> ojo(12)
+Traceback (most recent call last):
+TypeError: text must be a string

@@ -1,0 +1,24 @@
+test for add_integer function
+
+>>> ojo = __import__('0-add_integer').add_integer
+>>> ojo(1,2)
+3
+>>> ojo(-5, 6.2)
+1
+>>> ojo("pe", 23)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> ojo(23, "rras")
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> ojo(1,)
+99
+>>> ojo(,345)
+Traceback (most recent call last):
+SyntaxError: invalid syntax
+>>> ojo(True,354)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> ojo(2,3,4)
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
