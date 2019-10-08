@@ -19,13 +19,13 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
 
     def __init__(self, width=0, height=0):
-        self.height = height
-        self.width = width
+        self.__height = height
+        self.__width = width
         Rectangle.number_of_instances += 1
 
     @property
     def width(self):
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -37,7 +37,7 @@ class Rectangle:
 
     @property
     def height(self):
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
