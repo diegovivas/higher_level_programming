@@ -1,10 +1,15 @@
 #!/usr/bin/python3
-""""this class will be the base of al other
- classes in this proyect"""
+"""
+this class will be the base of al other
+classes in this proyect
+"""
 import json
 
-class Base:
-"""Base class"""
+
+class Base():
+    """
+    Base
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -15,8 +20,6 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
-
-
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -40,7 +43,7 @@ class Base:
                 lista.append(r)
         diccionario = cls.to_json_string(lista)
         with open(filename, mode='w') as f:
-            f.write(diccionario )
+            f.write(diccionario)
 
     @staticmethod
     def from_json_string(json_string):
@@ -51,7 +54,7 @@ class Base:
             return json.loads(json_string)
         else:
             return lista
-            
+
     @classmethod
     def create(cls, **dictionary):
         """create function"""
