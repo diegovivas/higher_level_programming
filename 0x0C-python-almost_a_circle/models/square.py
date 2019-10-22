@@ -35,6 +35,7 @@ class Square(Rectangle):
         return palabra
 
     def update(self, *args, **kwargs):
+        """update function"""
         if args:
             argu = len(args)
             if argu >= 1:
@@ -57,6 +58,7 @@ class Square(Rectangle):
                     self.y = value
 
     def to_dictionary(self):
+        """to_dictionary function"""
         dictionary = {}
         dictionary.setdefault('id', self.id)
         dictionary.setdefault('size', self.size)
