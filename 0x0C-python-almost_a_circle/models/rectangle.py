@@ -128,16 +128,16 @@ class Rectangle(Base):
                 self.__y = args[4]
         else:
             for key, value in kwargs.items():
-                if key is 'width':
+                if key == 'width':
                     self.__width = value
-                if key is 'height':
+                if key == 'height':
                     self.__height = value
-                if key is 'id':
+                if key == 'id':
                     self.id = value
-                if key is 'x':
+                if key == 'x':
                     self.__x = value
-                if key is 'y':
-                    self.y = value
+                if key == 'y':
+                    self.__y = value
 
     def to_dictionary(self):
         """to_dictionary function"""

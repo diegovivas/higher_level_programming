@@ -65,3 +65,19 @@ class Base():
             dummie = cls(2)
         dummie.update(**dictionary)
         return dummie
+
+    @classmethod
+    def load_from_file(cls):
+        """load_from_file function"""
+        lista = []
+        string = ""
+        try:
+            with open(cls.__name__ + ".json") as f:
+                string = f.read()
+                otra = Base.from_json_string(string)
+            for elements in otra:
+                lista.append(cls.create(**elements))
+        except Exception:
+            return lista
+
+        return lista
