@@ -29,7 +29,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        return width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -41,7 +41,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        return height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -54,7 +54,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        return x
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -66,7 +66,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        return y
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -74,7 +74,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if value < 0:
                 raise ValueError("width must be >= 0")
-        self.__y = y
+        self.__y = value
 
     def area(self):
         return (self.__width * self.__height)
@@ -94,15 +94,38 @@ class Rectangle(Base):
         palabra += "/{}".format(self.__height)
         return palabra
 
-    def update(self, *args):
-        argu = len(args)
-        if argu >= 1:
-            self.id = args[0]
-        if argu >= 2:
-            self.__width = args[1]
-        if argu >= 3:
-            self.__height = args[2]
-        if argu >= 4:
-            self.__x = args[3]
-        if argu >= 5:
-            self.__y = args[4]
+    def update(self, *args, **kwargs):
+        if args:
+            argu = len(args)
+            if argu >= 1:
+                self.id = args[0]
+            if argu >= 2:
+                self.__width = args[1]
+            if argu >= 3:
+                self.__height = args[2]
+            if argu >= 4:
+                self.__x = args[3]
+            if argu >= 5:
+                self.__y = args[4]
+        else:
+            for key, value in kwargs.items():
+                if key is 'width':
+                    self.__width = value
+                if key is 'height':
+                    self.__height = value
+                if key is 'id':
+                    self.id = value
+                if key is 'x':
+                    self.__x = value
+                if key is 'y':
+                    self.y = value
+        
+
+    def to_dictionary(self):
+        dictionary = {}
+        dictionary.setdefault('id', self.id)
+        dictionary.setdefault('width', self.__width)
+        dictionary.setdefault('height', self.__height)
+        dictionary.setdefault('x', self.__x)
+        dictionary.setdefault('y', self.__y)
+        return dictionary
