@@ -1,32 +1,23 @@
 #!/usr/bin/python3
-"""
-this class inherits from
- rectangle
-"""
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """
-    Square class
-    """
+
     def __init__(self, size, x=0, y=0, id=None):
-        """__init__ function"""
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """size getter"""
         return super().width
 
     @size.setter
     def size(self, value):
-        """size setter"""
         self.width = value
         self.height = value
 
     def __str__(self):
-        """__str__ function"""
         palabra = "[Square]"
         palabra += " ({})".format(self.id)
         palabra += " {}/".format(self.x)
@@ -35,7 +26,6 @@ class Square(Rectangle):
         return palabra
 
     def update(self, *args, **kwargs):
-        """update function"""
         if args:
             argu = len(args)
             if argu >= 1:
@@ -57,11 +47,11 @@ class Square(Rectangle):
                 if key is 'y':
                     self.y = value
 
+
     def to_dictionary(self):
-        """to_dictionary function"""
         dictionary = {}
-        dictionary.setdefault('id', self.id)
-        dictionary.setdefault('size', self.size)
-        dictionary.setdefault('x', self.x)
-        dictionary.setdefault('y', self.y)
+        dictionary.setdefault('size', self.id)
+        dictionary.setdefault('y', self.x)
+        dictionary.setdefault('x', self.size)
+        dictionary.setdefault('id', self.y)
         return dictionary
