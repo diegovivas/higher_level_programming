@@ -24,8 +24,9 @@ if __name__ == "__main__":
     query_rows = cur.fetchall()
     x = len(query_rows) - 1
     for row in query_rows:
-        if row != query_rows[x]:
-            print(row[0], end=", ")
+        if x != 0:
+            if row != query_rows[x]:
+                print(row[0], end=", ")
         else:
             print(row[0])
     cur.close()
