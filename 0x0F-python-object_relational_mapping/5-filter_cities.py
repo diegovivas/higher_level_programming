@@ -20,7 +20,12 @@ if __name__ == "__main__":
         AND states.name = %s
         ORDER BY id ASC;
         '''
-    cur.execute(arg, (sys.argv[4], ))
+    if sys.argv[5]:
+        x = sys.argv[4] + ' ' + sys.argv[5]
+        argv = (x, )
+    else:
+        argv = (sys.argv[4], )
+    cur.execute(arg, argv)
     query_rows = cur.fetchall()
     x = len(query_rows)
 
