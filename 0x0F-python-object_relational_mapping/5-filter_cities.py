@@ -28,7 +28,8 @@ if __name__ == "__main__":
         if row != query_rows[x - 1]:
             print(row[0], end=", ")
         else:
-            print(row[0])
+            print(row[0], end="")
 
+    print()
     cur.close()
     conn.close()
