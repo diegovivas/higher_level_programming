@@ -20,7 +20,7 @@ if __name__ == "__main__":
         AND states.name = %s
         ORDER BY id ASC;
         '''
-    if sys.argv[5]:
+    if len(sys.argv) > 5:
         x = sys.argv[4] + ' ' + sys.argv[5]
         argv = (x, )
     else:
