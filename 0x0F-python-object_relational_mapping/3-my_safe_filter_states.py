@@ -14,7 +14,7 @@ if __name__ == "__main__":
                            charset="utf8")
     cur = conn.cursor()
 
-    arg = "SELECT * FROM states WHERE BINARY name = '{%s}' ORDER BY id ASC"
+    arg = "SELECT * FROM states WHERE  name = '{%s}' ORDER BY id ASC"
     cur.execute(arg, sys.argv[4])
     query_rows = cur.fetchall()
     for row in query_rows:
