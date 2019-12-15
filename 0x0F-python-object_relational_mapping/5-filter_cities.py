@@ -20,20 +20,12 @@ if __name__ == "__main__":
         AND states.name = %s
         ORDER BY id ASC;
         '''
-    if len(sys.argv) > 5:
-        x = sys.argv[4] + ' ' + sys.argv[5]
-        argv = (x, )
-    else:
-        argv = (sys.argv[4], )
+    argv = (sys.argv[4], )
     cur.execute(arg, argv)
     query_rows = cur.fetchall()
-    x = len(query_rows)
-
-    for row in query_rows:
-        if row != query_rows[x - 1]:
-            print(row[0], end=", ")
-        else:
-            print(row[0], end="")
-    print()
+    strings = []
+    for item in query_rows:
+        strings.append(item[0])
+    print(", ".join(strings))
     cur.close()
     conn.close()
