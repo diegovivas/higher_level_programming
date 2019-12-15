@@ -28,12 +28,15 @@ if __name__ == "__main__":
     cur.execute(arg, argv)
     query_rows = cur.fetchall()
     x = len(query_rows)
+    flag = 0
 
     for row in query_rows:
+        flag = 1
         if row != query_rows[x - 1]:
             print(row[0], end=", ")
         else:
             print(row[0], end="")
-            print()
+    if flag == 1:
+        print()
     cur.close()
     conn.close()
