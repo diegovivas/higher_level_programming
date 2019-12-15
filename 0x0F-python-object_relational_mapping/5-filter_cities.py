@@ -22,14 +22,13 @@ if __name__ == "__main__":
         '''
     cur.execute(arg, (sys.argv[4], ))
     query_rows = cur.fetchall()
-    x = len(query_rows) - 1
+    x = len(query_rows)
+
     for row in query_rows:
-        if x != 1:
-            if row != query_rows[x]:
-                print(row[0], end=", ")
-            else:
-                print(row[0])
+        if row != query_rows[x - 1]:
+            print(row[0], end=", ")
         else:
             print(row[0])
+
     cur.close()
     conn.close()
