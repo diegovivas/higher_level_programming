@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """ fetches https://intranet.hbtn.io/status str version"""
 
-import urllib.request
+from urllib import request
 
 if __name__ == "__main__":
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as fetch:
+    with request.urlopen('https://intranet.hbtn.io/status') as fetch:
         page = fetch.read()
         page = page.decode('utf-8')
         print("Body response:")
