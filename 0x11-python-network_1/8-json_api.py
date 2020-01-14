@@ -6,7 +6,7 @@ import sys
 
 if __name__ == "__main__":
 
-    if len(sys.argv) >= 2:
+    if len(sys.argv) > 1:
         myobj = {'q': sys.argv[1]}
     else:
         myobj = {'q': ""}
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     try:
         ans = fetch.json()
         if len(ans) > 0:
-            print("{} {}".format(ans.get('id'), ans.get('name')))
+            print("[{}] {}".format(ans.get('id'), ans.get('name')))
         else:
             print('No result')
     except:
