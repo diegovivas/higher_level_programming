@@ -6,4 +6,5 @@ import sys
 
 if __name__ == "__main__":
     fetch = requests.get(sys.argv[1])
-    print(fetch.headers['X-Request-Id'])
+    page = fetch.headers['X-Request-Id']
+    print(page)
