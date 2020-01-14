@@ -13,4 +13,4 @@ if __name__ == "__main__":
     req = request.Request(url, data)
     with urllib.request.urlopen(req) as fetch:
         page = fetch.read()
-        print(page)
+        print(str(page)[2:-1])
