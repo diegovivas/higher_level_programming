@@ -14,7 +14,7 @@ if __name__ == "__main__":
     try:
         ans = fetch.json()
         if len(ans) > 0:
-            print("{} {}".format(ans['id'], ans['name']))
+            print("{} {}".format(ans.get('id'), ans.get('name')))
         else:
             print('No result')
     except:
