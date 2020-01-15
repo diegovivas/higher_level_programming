@@ -12,7 +12,7 @@ if __name__ == "__main__":
     cont = 0
     for element in page:
         print("{}: {}".format(element['sha'],
-                              element['commit']['committer']['name']))
+                              element['commit']['author']['name']))
         cont += 1
         if cont == 10:
             break
