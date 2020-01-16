@@ -6,7 +6,7 @@ import sys
 
 if __name__ == "__main__":
     palabra = 'https://api.github.com/repos/'
-    palabra = palabra + sys.argv[1] + '/' + sys.argv[2] + '/commits'
+    palabra = palabra + sys.argv[2] + '/' + sys.argv[1] + '/commits'
     fetch = requests.get(palabra)
     page = fetch.json()
     cont = 0
