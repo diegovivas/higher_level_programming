@@ -15,7 +15,7 @@ if __name__ == "__main__":
             for element2 in element['films']:
                 fetch2 = requests.get(element2)
                 page2 = fetch2.json()
-                print("    {}".format(page2['title']))
+                print("\t{}".format(page2['title']))
         if page['next'] is None:
             break
         fetch = requests.get(page['next'])
