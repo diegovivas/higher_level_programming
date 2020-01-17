@@ -12,7 +12,7 @@ if __name__ == "__main__":
     while (True):
         for element in page['results']:
             print(element['name'])
-        if page['next'] == None:
+        if page['next'] is None:
             break
         fetch = requests.get(page['next'])
         page = fetch.json()
