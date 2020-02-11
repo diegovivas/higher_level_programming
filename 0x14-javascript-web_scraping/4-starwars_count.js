@@ -3,6 +3,7 @@ const request = require('request');
 const id = process.argv.slice(2)[0];
 request.get(id, function (err, response, body) {
   if (err) {
+    console.log(err);
   } else {
     const listMovies = JSON.parse(body).results;
     let cont = 0;
