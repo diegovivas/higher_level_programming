@@ -10,7 +10,7 @@ request.get(id, function (err, response, body) {
     for (let i = 0; i < listMovies.length; i++) {
       const xhar = listMovies[i].characters;
       for (let x = 0; x < xhar.length; x++) {
-        if (xhar[x] === 'https://swapi.co/api/people/18/') {
+        if (xhar[x].search('/18/') > 0) {
           cont++;
         }
       }
